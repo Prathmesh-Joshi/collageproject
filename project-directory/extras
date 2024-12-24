@@ -1,0 +1,431 @@
+// ______________________________________________________S E R V E R > JS ________________________________________________________________________
+
+
+// const express = require('express');                         // Require dependencies
+// const mongoose = require('mongoose');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+// const bcrypt = require('bcryptjs'); // Required for hashing passwords
+
+// // Initialize app
+// const app = express();
+// app.use(bodyParser.json());
+// app.use(cors());
+// app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
+
+// // Connect to MongoDB
+// mongoose.connect('mongodb://127.0.0.1:27017/userDB', {  // MongoDB URL
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// }).then(() => console.log('MongoDB Connected'))
+//   .catch((err) => console.error(err));
+
+// // User Schema
+// const userSchema = new mongoose.Schema({
+//   firstName: String,
+//   lastName: String,
+//   email: String,
+//   contact: String,
+//   userType: { type: String, enum: ['buyer', 'artist'], default: 'buyer' },
+//   password: String,
+// });
+
+// // Create User Model
+// const User = mongoose.model('User', userSchema);
+
+// // Signup Route
+// app.post('/signup', async (req, res) => {
+//   const { firstName, lastName, email, contact, userType, password, confirmPassword } = req.body;
+
+//   // // Check if passwords match
+//   // if (password !== confirmPassword) {
+//   //   return res.json({ message: 'Passwords do not match!' });
+//   // }
+
+//   // Check if user already exists
+//   const userExists = await User.findOne({ email });
+//   if (userExists) {
+//     return res.json({ message: 'User already exists!' });
+//   }
+
+//   // Hash the password before saving it
+//   const hashedPassword = await bcrypt.hash(password, 10);
+
+//   // Create a new user
+//   const newUser = new User({
+//     firstName,
+//     lastName,
+//     email,
+//     contact,
+//     userType,
+//     password: hashedPassword,
+//   });
+
+//   // Save the new user
+//   await newUser.save();
+//   res.json({ message: 'User registered successfully!' });
+// });
+
+// // Login Route
+// app.post('/login', async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Find user by email
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Compare the password with the hashed password stored in the database
+//   const isMatch = await bcrypt.compare(password, user.password);
+//   if (!isMatch) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Send a success message if login is successful
+//   res.json({ message: 'Login successful!' });
+// });
+
+// // Start the server
+// const PORT = 3000;
+// app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+//__________________________________________________________________________________________________________________________________
+
+// const express = require('express'); // Require dependencies
+// const mongoose = require('mongoose');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+// const bcrypt = require('bcryptjs'); // Required for hashing passwords
+
+// // Initialize app
+// const app = express();
+// app.use(bodyParser.json());
+// app.use(cors());
+// app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
+
+
+
+// // Connect to MongoDB
+// mongoose
+//   .connect('mongodb://127.0.0.1:27017/userDB', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log('MongoDB Connected'))
+//   .catch((err) => console.error(err));
+
+// // User Schema
+// const userSchema = new mongoose.Schema({
+//   firstName: String,
+//   lastName: String,
+//   email: String,
+//   contact: String,
+//   userType: { type: String, enum: ['buyer', 'artist'], default: 'buyer' },
+//   password: String,
+// });
+
+// // Create User Model
+// const User = mongoose.model('User', userSchema);
+
+// // Predefined Admin Credentials
+// const adminCredentials = {
+//   email: 'admin@example.com',
+//   password: 'admin123', // Use bcrypt to hash this for better security
+// };
+
+// // Admin Login Route
+// app.post('/admin/login', async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Check if the login is for admin
+//   if (email === adminCredentials.email) {
+//     // Validate admin password
+//     if (password === adminCredentials.password) {
+//       return res.json({ message: 'Admin login successful!', isAdmin: true });
+//     } else {
+//       return res.json({ message: 'Invalid admin password!' });
+//     }
+//   }
+
+//   // If not admin, check for regular user login
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Compare the password with the hashed password stored in the database
+//   const isMatch = await bcrypt.compare(password, user.password);
+//   if (!isMatch) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Send a success message if login is successful for a regular user
+//   res.json({ message: 'Login successful!', isAdmin: false });
+// });
+
+// // Signup Route for Users__________________________
+// app.post('/signup', async (req, res) => {
+//   const { firstName, lastName, email, contact, userType, password, confirmPassword } = req.body;
+
+//   // // Check if passwords match
+//   // if (password !== confirmPassword) {
+//   //   return res.json({ message: 'Passwords do not match!' });
+//   // }
+
+//   // Check if user already exists
+//   const userExists = await User.findOne({ email });
+//   if (userExists) {
+//     return res.json({ message: 'User already exists!' });
+//   }
+
+//   // Hash the password before saving it
+//   const hashedPassword = await bcrypt.hash(password, 10);
+
+//   // Create a new user
+//   const newUser = new User({
+//     firstName,
+//     lastName,
+//     email,
+//     contact,
+//     userType,
+//     password: hashedPassword,
+//   });
+
+//   // Save the new user
+//   await newUser.save();
+//   res.json({ message: 'User registered successfully!' });
+// });
+
+
+
+
+// // Login Route
+// app.post('/login', async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Find user by email
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Compare the password with the hashed password stored in the database
+//   const isMatch = await bcrypt.compare(password, user.password);
+//   if (!isMatch) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Send a success message if login is successful
+//   res.json({ message: 'Login successful!' });
+// });
+
+
+// // Start the server
+// const PORT = 3000;
+// app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+// _____________________________________________________________________________________________________________________________________________
+
+
+// const express = require('express'); // Require dependencies
+// const mongoose = require('mongoose');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+// const bcrypt = require('bcryptjs'); // Required for hashing passwords
+
+// // Initialize app
+// const app = express();
+// app.use(bodyParser.json());
+// app.use(cors());
+// app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
+
+
+// // Connect to MongoDB
+// mongoose
+//   .connect('mongodb://127.0.0.1:27017/userDB', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log('MongoDB Connected'))
+//   .catch((err) => console.error(err));
+
+// // User Schema
+// const userSchema = new mongoose.Schema({
+//   firstName: String,
+//   lastName: String,
+//   email: String,
+//   contact: String,
+//   userType: { type: String, enum: ['buyer', 'artist'], default: 'buyer' },
+//   password: String,
+// });
+
+// const artSchema = new mongoose.Schema({
+//   title: String,
+//   description: String,
+//   image: String,
+//   price: Number,
+// });
+
+// const User = mongoose.model('User', userSchema);
+// const Art = mongoose.model('Art', artSchema);
+
+// // Predefined Admin Credentials (hashed for security)
+// const adminCredentials = {
+//   email: 'admin@example.com',
+//   password: bcrypt.hashSync('admin123', 10), // Storing hashed password
+// };
+
+// // Admin Login Route
+// app.post('/admin/login', async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Check if the login is for admin
+//   if (email === adminCredentials.email) {
+//     // Validate admin password
+//     const isMatch = await bcrypt.compare(password, adminCredentials.password);
+//     if (isMatch) {
+//       return res.json({ message: 'Admin login successful!', isAdmin: true });
+//     } else {
+//       return res.json({ message: 'Invalid admin password!' });
+//     }
+//   }
+
+//   // If not admin, check for regular user login
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Compare the password with the hashed password stored in the database
+//   const isMatch = await bcrypt.compare(password, user.password);
+//   if (!isMatch) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Send a success message if login is successful for a regular user
+//   res.json({ message: 'Login successful!', isAdmin: false });
+// });
+
+// // Signup Route for Users
+// app.post('/signup', async (req, res) => {
+//   const { firstName, lastName, email, contact, userType, password, confirmPassword } = req.body;
+
+//   // Check if passwords match
+//   if (password !== confirmPassword) {
+//     return res.json({ message: 'Passwords do not match!' });
+//   }
+
+//   // Check if user already exists
+//   const userExists = await User.findOne({ email });
+//   if (userExists) {
+//     return res.json({ message: 'User already exists!' });
+//   }
+
+//   // Hash the password before saving it
+//   const hashedPassword = await bcrypt.hash(password, 10);
+
+//   // Create a new user
+//   const newUser = new User({
+//     firstName,
+//     lastName,
+//     email,
+//     contact,
+//     userType,
+//     password: hashedPassword,
+//   });
+
+//   // Save the new user
+//   await newUser.save();
+//   res.json({ message: 'User registered successfully!' });
+// });
+
+// // Login Route for Users
+// app.post('/login', async (req, res) => {
+//   const { email, password } = req.body;
+
+//   // Find user by email
+//   const user = await User.findOne({ email });
+//   if (!user) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Compare the password with the hashed password stored in the database
+//   const isMatch = await bcrypt.compare(password, user.password);
+//   if (!isMatch) {
+//     return res.json({ message: 'Invalid email or password!' });
+//   }
+
+//   // Send a success message if login is successful
+//   res.json({ message: 'Login successful!' });
+// });
+
+// // Admin Routes for Managing Arts and Users
+
+// // Add new art
+// app.post('/admin/add-art', async (req, res) => {
+//   const { title, description, image, price } = req.body;
+//   try {
+//     const newArt = new Art({ title, description, image, price });
+//     await newArt.save();
+//     res.status(201).json({ message: 'Art added successfully!', art: newArt });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to add art', error });
+//   }
+// });
+
+// // Get all arts
+// app.get('/admin/arts', async (req, res) => {
+//   try {
+//     const arts = await Art.find({});
+//     res.status(200).json(arts);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to fetch arts', error });
+//   }
+// });
+
+// // Delete art by ID
+// app.delete('/admin/delete-art/:artId', async (req, res) => {
+//   const { artId } = req.params;
+//   try {
+//     const deletedArt = await Art.findByIdAndDelete(artId);
+//     if (!deletedArt) {
+//       return res.status(404).json({ message: 'Art not found' });
+//     }
+//     res.status(200).json({ message: 'Art deleted successfully' });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to delete art', error });
+//   }
+// });
+
+// // Get all users
+// app.get('/admin/users', async (req, res) => {
+//   try {
+//     const users = await User.find({});
+//     res.status(200).json(users);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to fetch users', error });
+//   }
+// });
+
+// // Delete user by ID
+// app.delete('/admin/delete-user/:userId', async (req, res) => {
+//   const { userId } = req.params;
+//   try {
+//     const deletedUser = await User.findByIdAndDelete(userId);
+//     if (!deletedUser) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+//     res.status(200).json({ message: 'User deleted successfully' });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to delete user', error });
+//   }
+// });
+
+// // Start the server
+// const PORT = 3000;
+// app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+//_____________________________________________________________________________________________________________________________________

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Profile</title>
+    <link rel="stylesheet" href="../styles/artist_profile.css">
+</head>
+<body>
+    <div class="profile-header">
+        <div class="profile-photo-container">
+            <img src="images/artist1.jpeg" alt="Artist Photo" class="profile-photo">
+            <p class="artist-id">Artist ID: 12345</p>
+        </div>
+        <div class="profile-info">
+            <h2 class="artist-name">Artist Name</h2>
+            <p class="artist-bio">Artist bio goes here. This is a brief description of the artist and their work.</p>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- New div for tabs and tab content -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('artworks')">Artworks</button>
+            <button class="tab" onclick="showTab('projects')">Projects</button>
+            <button class="tab" onclick="showTab('collections')">Collections</button>
+            <button class="tab" onclick="showTab('behind')">Behind the Scenes</button>
+        </div>
+
+        <div id="artworks" class="tab-content active">
+            <div class="gallery">
+                <div class="artwork">
+                    <img src="images/art1.jpeg" alt="Art Piece 1" class="artwork-image">
+                    <div class="art-info">
+                        <p class="artwork-title">Title of Artwork</p>
+                        <p class="artwork-description">Description of the artwork goes here.</p>
+                    </div>
+                </div>
+                <div class="interaction">
+                    <span class="like-button">❤️ Like</span>
+                    <div class="comments-section">
+                        <p><strong>Comments/Suggestions:</strong></p>
+                        <textarea placeholder="Add your comment..."></textarea>
+                        <button onclick="addComment()">Post</button>
+                    </div>
+                </div>
+                <!-- Repeat for more artworks -->
+            </div>
+                                   
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h3>Projects</h3>
+            <p>Details about the artist's projects will go here.</p>
+        </div>
+
+        <div id="collections" class="tab-content">
+            <h3>Collections</h3>
+            <p>Details about the artist's collections will go here.</p>
+        </div>
+
+        <div id="behind" class="tab-content">
+            <h3>Behind the Scenes</h3>
+            <p>Details about behind-the-scenes activities will go here.</p>
+        </div>
+    </div>
+
+    <script src="../scripts/artist_profile.js"></script>
+</body>
+</html>

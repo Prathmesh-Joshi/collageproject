@@ -1,0 +1,1267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4eeff;
+  }
+    
+  /* Header styling */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust spacing for elements in the header */
+    height: 150px;
+    padding: 10px 20px; /* Add some padding */
+    background-color: #d0caca;
+    border-bottom: 2px solid #000000;
+    color: rgb(4, 4, 4);
+  }
+
+header .logo {
+  font-size: 44px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header .menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+header .user-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+header .profile-name {
+  font-size: 16px;
+  color: #000000;
+}
+
+header .profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #eeeeee;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  width: 150px;
+}
+
+header .profile-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .profile-dropdown ul li {
+  padding: 8px 10px;
+}
+
+header .profile-dropdown ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+header .profile-dropdown ul li a:hover {
+  color: #000000;
+}
+
+header .user-profile:hover .profile-dropdown {
+  display: block;
+}
+
+  /* Navbar Styling */
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 4px solid #000000; /* Blue border at the top */
+  border-bottom: 4px solid #000000; /* Blue border at the bottom */
+}
+.navbar-left ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-left ul li {
+  display: inline-block;
+}
+
+.navbar-left ul li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar-left ul li a:hover {
+  color: #ff6347;
+}
+.navbar-right {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-right ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-right ul li {
+  display: inline-block;
+}
+
+.navbar-right ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-right ul li a:hover {
+  color: #0061f2;
+}
+
+.navbar-right ul li.dropdown {
+  position: relative;
+}
+
+.navbar-right ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.cart-count {
+  background-color: #ff0000;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.navbar-right ul li a .fa {
+  font-size: 20px;
+}
+
+.navbar-right ul li a:hover .fa {
+  color: #0061f2;
+}
+
+/* Social Media Icons Styling */
+.navbar-right ul li a .fa-brands {
+  font-size: 20px;
+  color: #333;
+}
+
+.navbar-right ul li a:hover .fa-brands {
+  color: #0061f2;
+}
+
+.navbar-right ul li a {
+  color: #333; /* Default color for nav links */
+  text-decoration: none;
+}
+
+.navbar-right ul li a:hover {
+  color: #ff6347; /* Change color on hover */
+}
+
+
+
+.advertisement {
+  display: flex;
+  background-color: #c4bbf0;
+  padding: 30px;
+  margin: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advertisement-text {
+  max-width: 60%;
+}
+
+.advertisement-text h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.advertisement-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.check-prices-btn {
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.check-prices-btn:hover {
+  background-color: #e5533d;
+}
+
+.advertisement-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+  /* Menu icons styling */
+  .menu-icon {
+    display: inline-block;
+    margin-right: 10px; /* Reduce the margin between icons */
+    font-size: 20px; /* Icon size */
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+
+  /* Logo styling */
+  .logo {
+    flex-grow: 1; /* Push the logo to take available space */
+    text-align: center; /* Center align the logo */
+    font-size: 40px;
+    color: white;
+  }
+
+  /* Login button styling */
+  .login-btn {
+    background-color: #575757;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .login-btn:hover {
+    background-color: #444;
+  }
+
+  /* Sidebar */
+  #sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    border: solid #000000;
+    border-radius: 10px;
+    position:absolute;
+    top: 150px; /* Adjusted to sit below header */
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  #sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+  }
+  #sidebar nav ul {
+    list-style: none;
+  }
+  
+  #sidebar nav ul li {
+    margin: 20px 0;
+  }
+  
+  #sidebar nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+  }
+  
+  #sidebar nav ul li a:hover {
+    background-color: #555;
+    border-radius: 50px;
+  }
+  
+
+  #filterbar {
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    border: solid #000000;
+    border-radius: 10px;
+    position: absolute;
+    top: 150px; /* Adjusted to sit below header */
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  #filterbar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+  }
+  #filterbar nav ul {
+    list-style: none;
+  }
+  
+  #filterbar nav ul li {
+    margin: 20px 0;
+  }
+  
+  #filterbar nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+  }
+  
+  #filterbar nav ul li a:hover {
+    background-color: #555;
+    border-radius: 50px;
+  }
+
+
+
+
+  
+  
+/* heading welcome to sketichfy */
+  
+  main {
+    text-align: center; /* Center the text inside the main content */
+    background-color: #f4f4f4; /* Optional, for better visibility */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  }
+  
+  
+  .post-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Center-align the content within the section */
+    padding: 20px;
+    background-color: #ffffff; /* Optional: White background for contrast */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Optional: Limit the maximum width */
+  }
+  
+  .posts-section h2 {
+    text-align: center;
+  }
+  
+  
+
+  
+
+  .posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between posts */
+    padding: 20px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+    justify-content: space-between; /* Align items evenly */
+  }
+  
+  .post {
+    width: calc(25% - 20px); /* Ensures 4 posts per row with spacing */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflow */
+    display: flex;
+    flex-direction: column; /* Ensures content aligns vertically */
+    justify-content: space-between; /* Aligns content properly */
+    min-height: 300px; /* Set a minimum height for consistency */
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto; /* Fixed image height */
+    object-fit: cover; /* Maintain aspect ratio and fill */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .post-content {
+    padding: 10px;
+    flex-grow: 1; /* Ensures all content divs stretch to fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Align content within div */
+  }
+  
+  .post-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .post-content strong {
+    color: #333;
+    font-weight: bold;
+  }
+  
+
+
+
+/* Container for the expanded post section */
+.expanded-post-section {
+  margin: 40px auto;
+  padding: 30px;
+  width: 85%;
+  max-width: 800px;
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px;
+  display: flex;
+  gap: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expanded-post-section:hover {
+  transform: translateY(-8px); /* Subtle lift effect */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Left Section - Image */
+.post-left {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* Ensures image doesn't overflow its container */
+  border-radius: 12px; /* Rounded corners for the image */
+}
+
+.post-left img {
+  width: 200px;
+  height: 200px; /* Make the image take full height of the container */
+  object-fit: fill; /* Ensure the image covers the full div area */
+  transition: transform 0.3s ease;
+}
+
+.post-left img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Right Section - Content */
+.post-right {
+  flex: 1;
+  background-color: #f4f6f9; /* Light grey background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Post Title */
+.post-right h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.post-right h2:hover {
+  color: #2980b9; /* Change to blue on hover */
+}
+
+/* Post Description */
+.post-right p {
+  font-size: 16px;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Interaction Buttons - Like and Comment Section */
+.interactions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Like Button */
+.like-btn {
+  background-color: #e74c3c; /* Bold red */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.like-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Comment Section */
+.comment-btn {
+  background-color: #3498db; /* Bright blue */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.comment-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Like Count Display */
+.like-count {
+  font-size: 16px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Comment Box Styling */
+.comment-box {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.comment-box textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  resize: none;
+  color: #2c3e50;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.comment-box textarea:focus {
+  border-color: #3498db;
+  background-color: #fff;
+  outline: none;
+}
+
+.comment-box button {
+  margin-top: 12px;
+  padding: 12px 20px;
+  background-color: #2ecc71; /* Green color for submit button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-box button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+
+/* Footer Styling */
+footer {
+  background-color: #222; /* Dark background */
+  color: #fff; /* White text color */
+  padding: 20px 10px;
+  text-align: center; /* Centers text for smaller screens */
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Makes it responsive */
+  justify-content: space-between; /* Equal spacing between divisions */
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the footer container */
+  
+}
+
+.footer-container div {
+  flex: 1; /* Divisions take equal space */
+  min-width: 200px; /* Ensures columns stack on smaller screens */
+  margin: 10px; /* Space between divisions */
+}
+
+.footer-container h3 {
+  margin-bottom: 10px;
+  color: #d95555; /* Accent color for headings */
+}
+
+.footer-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  color: #d95555; /* Hover color for links */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack divisions vertically */
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Buy Now Button */
+.buy-now-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buy-now-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.buy-now-btn:active {
+  background-color: #1e7e34; /* Even darker green on active click */
+  transform: scale(1); /* Reset size on click */
+}
+
+.buy-now-btn:focus {
+  outline: none;
+}
+
+
+.add-to-cart-btn {
+  background-color: #3498db; /* Bright blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom */
+}
+
+.add-to-cart-btn:active {
+  background-color: #1e6b99; /* Even darker blue on active click */
+  transform: scale(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+buynow css */
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f3f0f0;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.art-details-container {
+  
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between posts */
+    padding: 20px;
+    background-color: #eeeeee;
+    border-radius: 8px;
+}
+
+.art-details-left img {
+  width: 400px;
+  height: 300px;
+  object-fit: fill;
+  border-radius: 10px;
+}
+
+.art-details-right {
+  max-width: 500px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #ff4500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BUYNOW CSS */
+
+
+
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.product-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.product-left img {
+  width: 300px;
+  height: 300px; /* Ensure it's square */
+  object-fit: contain; /* Adjust this to contain to prevent image cutting */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-right {
+  max-width: 600px;
+  padding-left: 30px;
+}
+
+.product-right h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-right p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.product-right .Pur {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-right .buy-now-btn:hover {
+  background-color: #ff4500;
+}
+
+.product-right .back-link {
+  text-decoration: none;
+  color: #ff6347;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.social-share {
+  display: flex;
+  gap: 10px;
+}
+
+.social-share a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.social-share a:hover {
+  color: #ff6347;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+  }
+
+  .product-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .product-left {
+    margin-bottom: 20px;
+  }
+
+  .product-right {
+    padding-left: 0;
+  }
+}
+
+
+/*  */
+
+
+
+
+
+/* ARTISTPROFILE CSS */
+
+
+
+
+
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+/* Tabs Container */
+.tabs-container {
+  background: #fff;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: transparent;
+  color: #555;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.tab:hover,
+.tab.active {
+  color: #6e8efb;
+  border-bottom: 2px solid #6e8efb;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Gallery Section */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.artwork {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 20px);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.artwork:hover {
+  transform: translateY(-5px);
+}
+
+.artwork-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.artwork-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+}
+
+.artwork-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-header,
+  .tabs-container {
+      flex-direction: column;
+      padding: 15px;
+  }
+
+  .profile-photo {
+      width: 50px;
+      height: 50px;
+  }
+
+  .gallery .artwork {
+      width: calc(100% - 20px);
+  }
+}
+
+
+/* Responsive Image Styling */
+img {
+  max-width: 100%; /* Ensures the image scales down within its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing issues */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Specific Image Resizing */
+.image-custom-size {
+  width: 300px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+  object-fit: cover; /* Maintain cover aspect without distortion */
+}
+
+
+/* Artist Posts Section */
+.artist-posts {
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.artist-posts h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.post {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* Three posts per row */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.post-details {
+  padding: 10px;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.post-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.post-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6e8efb;
+}
+
+/* Responsive Design for Posts Section */
+@media (max-width: 1024px) {
+  .post {
+      width: calc(50% - 20px); /* Two posts per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .post {
+      width: calc(100% - 20px); /* Single post per row */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Upload Section Styles */
+.upload-section {
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  text-align: center;
+}
+
+.upload-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6e8efb;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.upload-container {
+  padding: 20px;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+}
+
+.styled-form input,
+.styled-form textarea {
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 10px rgba(110, 142, 251, 0.4);
+}
+
+.custom-file-label {
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-file-label:hover {
+  background: linear-gradient(90deg, #5a7adb, #9055c1);
+}
+
+.custom-file-input {
+  display: none;
+}
+
+.styled-submit {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.styled-submit:hover {
+  background: linear-gradient(90deg, #ff5a91, #ff4572);
+  transform: scale(1.05);
+}
